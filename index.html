@@ -8,22 +8,6 @@
             crossorigin="anonymous"></script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <style>
-        #VocSignalApp .SandSIV_Feedback_Modal {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            height: auto;
-            width: auto;
-            transform: none;
-        }
-
-        #VocSignalApp .SandSIV_Feedback_Modal_Close {
-            display: none;
-        }
-    </style>
-    <style>
 
         .modal {
             font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
@@ -181,6 +165,8 @@
 </head>
 <body>
 
+<button id="srt"> start runner </button>
+
 <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1">
         <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
@@ -205,6 +191,19 @@
             </main>
             <footer class="modal__footer">
                 <button id="modal2__btn__n" class="modal__btn">Now</button>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<div class="modal micromodal-slide" id="modal-3" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <main class="modal__content" id="modal-3-content">
+                <h1> Some Information </h1>
+            </main>
+            <footer class="modal__footer">
+                <button id="modal3__btn__n" class="modal__btn">Next</button>
             </footer>
         </div>
     </div>
