@@ -1,234 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-            crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-    <style>
-
-        .modal {
-            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-        }
-
-        .modal__overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal__container {
-            background-color: #fff;
-            padding: 30px;
-            max-width: 500px;
-            max-height: 100vh;
-            border-radius: 4px;
-            overflow-y: auto;
-            box-sizing: border-box;
-        }
-
-        .modal__header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal__title {
-            margin-top: 0;
-            margin-bottom: 0;
-            font-weight: 600;
-            font-size: 1.25rem;
-            line-height: 1.25;
-            color: #00449e;
-            box-sizing: border-box;
-        }
-
-        .modal__close {
-            background: transparent;
-            border: 0;
-        }
-
-        .modal__header .modal__close:before {
-            content: "\2715";
-        }
-
-        .modal__content {
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-            line-height: 1.5;
-            color: rgba(0, 0, 0, .8);
-        }
-
-        .modal__btn {
-            font-size: .875rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: .5rem;
-            padding-bottom: .5rem;
-            background-color: #e6e6e6;
-            color: rgba(0, 0, 0, .8);
-            border-radius: .25rem;
-            border-style: none;
-            border-width: 0;
-            cursor: pointer;
-            -webkit-appearance: button;
-            text-transform: none;
-            overflow: visible;
-            line-height: 1.15;
-            margin: 0;
-            will-change: transform;
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            transition: -webkit-transform .25s ease-out;
-            transition: transform .25s ease-out;
-            transition: transform .25s ease-out, -webkit-transform .25s ease-out;
-        }
-
-        .modal__btn:focus, .modal__btn:hover {
-            -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-        }
-
-        .modal__btn-primary {
-            background-color: #00449e;
-            color: #fff;
-        }
-
-
-        /**************************\
-          Demo Animation Style
-        \**************************/
-        @keyframes mmfadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes mmfadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-            }
-        }
-
-        @keyframes mmslideIn {
-            from {
-                transform: translateY(15%);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes mmslideOut {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(-10%);
-            }
-        }
-
-        .micromodal-slide {
-            display: none;
-        }
-
-        .micromodal-slide.is-open {
-            display: block;
-        }
-
-        .micromodal-slide[aria-hidden="false"] .modal__overlay {
-            animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-        }
-
-        .micromodal-slide[aria-hidden="false"] .modal__container {
-            animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
-        }
-
-        .micromodal-slide[aria-hidden="true"] .modal__overlay {
-            animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-        }
-
-        .micromodal-slide[aria-hidden="true"] .modal__container {
-            animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
-        }
-
-        .micromodal-slide .modal__container,
-        .micromodal-slide .modal__overlay {
-            will-change: transform;
-        }
-
-        .modal__container {
-            width: 300px;
-            text-align: center;
-        }
-    </style>
+    <meta charset="utf-8">
+    <title>App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<!--<a href="https://wenzoto.github.io/index.html"> index </a> <br />-->
+<!--<a href="https://wenzoto.github.io/index2.html"> index2 </a> <br />-->
+<!--<a href="https://wenzoto.github.io/index3.html"> index3 </a> <br />-->
+<!--<a href="https://wenzoto.github.io/index4.html"> index4 </a> <br />-->
+<!--<a href="https://wenzoto.github.io/index5.html"> index5 </a> <br />-->
+<script src="https://stage1-astra.surv.biz/digi_runner.js?surveyId=268&language=en"></script>
+<script>
 
-<button id="srt"> start runner</button>
+    console.log(-1)
 
-<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-    <div class="modal__overlay" tabindex="-1">
-        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-            <main class="modal__content" id="modal-1-content">
-                <p>
-                    Do you want to pass survey ?
-                </p>
-            </main>
-            <footer class="modal__footer">
-                <button id="modal1__btn__n" class="modal__btn">Now</button>
-                <button id="modal1__btn__l" class="modal__btn">Later</button>
-            </footer>
-        </div>
-    </div>
-</div>
 
-<div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
-    <div class="modal__overlay" tabindex="-1">
-        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-            <main class="modal__content" id="modal-2-content">
-                <p>
-                    Finish
-                </p>
-            </main>
-            <footer class="modal__footer">
-                <button id="modal2__btn__n" class="modal__btn">Now</button>
-            </footer>
-        </div>
-    </div>
-</div>
 
-<div class="modal micromodal-slide" id="modal-3" aria-hidden="true">
-    <div class="modal__overlay" tabindex="-1">
-        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-            <main class="modal__content" id="modal-3-content">
-                <p> Some Information </p>
-            </main>
-            <footer class="modal__footer">
-                <button id="modal3__btn__n" class="modal__btn">Next</button>
-            </footer>
-        </div>
-    </div>
-</div>
 
-</body>
-<script type="text/javascript" src="/index.js"></script>
-<script src="https://dev2-child-astra.surv.biz/digi_runner.js"></script>
+
+    //
+    //     function SetParameters(e) {
+    //         window.VocSignal_SendEvent && window.VocSignal_SendEvent('SetParameters', {
+    //             apiUrl: 'https://dev2-child-astra.surv.biz',
+    //             language: 'en',
+    //             // customerId: `zu66FVdAjdsAZi74${Math.floor(Math.random() * Math.floor(9999))}`,
+    //             customerId: 'zu66FVdAjdsAZi74'+ Math.floor(Math.random() * Math.floor(9999)),
+    //             surveyId:  104,//5699
+    //             metadata: {
+    //                 'name': 'my name'
+    //             }
+    //         });
+    //     }
+    // //
+    // //
+    // //
+    // //
+    //    SetParameters();
+    // //
+    // //    function SetMockedData(e) {
+    // //        window.VocSignal_SendEvent('SetMockedData', {
+    // //            apiUrl: '/',
+    // //            mockData: {
+    // //                "settings": {
+    // //                    "DIGI_SURVEY_IS_STEPBYSTEP": false,
+    // //                    "DIGI_ACTIVATE_BY_BUTTON": false,
+    // //                    "DIGI_PROBABILITY_OF_APPEARANCE": 100,
+    // //                    "DIGI_QUIET_TIME": 0,
+    // //                    "DIGI_CUSTOMER_EXT_ID_WHITELISTED": [],
+    // //                    "DIGI_DONT_SHOW_SURVEY_FOR_REFUSERS_PERIOD": 9,
+    // //                    "DIGI_ABANDONMENT_TRIGGER_DELAY": 10,
+    // //                    "DIGI_TRIGGERED_BUTTON_ID": "1234234234",
+    // //                    "DIGI_SHOW_LEAVE_POPUP": false,
+    // //                    "DIGI_SEND_INITIAL_URL": false,
+    // //                    "DIGI_THEME": "28",
+    // //                    "DIGI_SURVEY_IS_STEPBYSTEP_GROUPED": false,
+    // //                    "DIGI_CHAT_MODE": false,
+    // //                    "DIGI_SHOW_NAVBAR": false,
+    // //                    "DIGI_RUNNER_URL": "https://dema-astra-8.terebii.com",
+    // //                    "DIGI_TRIGGERED_BUTTON_EVENT": null,
+    // //                    "DIGI_VISITS_COUNTER": null,
+    // //                    "DIGI_NUMBER_OF_PAGES_VISITED": null,
+    // //                    "DIGI_SESSION_TIMEOUT": null,
+    // //                    "DIGI_PAGE_TIMEOUT": null,
+    // //                    "DIGI_DONT_SHOW_SURVEY_FOR_REFUSERS": null,
+    // //                    "DIGI_NEXT_QUESTION_DELAY": null,
+    // //                    "DIGI_POPUP_WINDOW_HEIGHT": null,
+    // //                    "DIGI_POPUP_WINDOW_WIDTH": null,
+    // //                    "DIGI_POPUP_BG_COLOR": null,
+    // //                    "DIGI_POPUP_FONT_FAMILY": null,
+    // //                    "DIGI_POPUP_QUESTION_BG_COLOR": null,
+    // //                    "DIGI_POPUP_QUESTION_FONT_COLOR": null,
+    // //                    "DIGI_POPUP_INDENT": null,
+    // //                    "DIGI_POPUP_HEADER_BG_COLOR": null,
+    // //                    "DIGI_POPUP_HEADER_FONT_COLOR": null,
+    // //                    "DIGI_POPUP_BUTTON_BG_COLOR": null,
+    // //                    "DIGI_POPUP_BUTTON_FONT_COLOR": null,
+    // //                    "DIGI_RUNNER_FONT_SIZE": null,
+    // //                    "DIGI_THEME_CSS_CUSTOM": null,
+    // //                    "DIGI_THEME_CSS_EXTERNAL": null,
+    // //                    "DIGI_BUTTON_GO_TO_PREVIOUS_TEXT": "Text for Go To Previous button",
+    // //                    "DIGI_BUTTON_START_AGAIN_TEXT": "Text for Start Again button",
+    // //                    "DIGI_BUTTON_NEXT_QUESTION_TEXT": "Text for Next Question button",
+    // //                    "DIGI_SURVEY_STATIC_LINK": null,
+    // //                    "DIGI_TRIGGERED_BUTTON_TEXT": null,
+    // //                    "DIGI_BUTTON_SUBMIT_TEXT": null,
+    // //                    "DIGI_THANKS_MESSAGE": null,
+    // //                    "DIGI_BUTTON_FINISH_TEXT": null,
+    // //                    "DIGI_POPUP_TITLE": null,
+    // //                    "DIGI_THEME_CSS_CUSTOM_LANGUAGE": null,
+    // //                    "DIGI_THEME_CSS_EXTERNAL_LANGUAGE": null
+    // //                },
+    // //                "hash": "dOm86AyNNGzVKvrhJk1AI9HV62AoR0BY",
+    // //                "questions": [
+    // //                    {
+    // //                        "id": 1675,
+    // //                        "type": "QuestionOpenDIGI",
+    // //                        "language": {
+    // //                            "text": "Text Question",
+    // //                            "error": "Error Text Question"
+    // //                        },
+    // //                        "nested_level": 1,
+    // //                        "options": {
+    // //                            "required": "0"
+    // //                        },
+    // //                        "answers": []
+    // //                    },
+    // //                    {
+    // //                        "id": 1676,
+    // //                        "type": "QuestionScalableDIGI",
+    // //                        "language": {
+    // //                            "text": "Text Question",
+    // //                            "error": "Error Text Question"
+    // //                        },
+    // //                        "nested_level": 1,
+    // //                        "options": {
+    // //                            "required": "1",
+    // //                            "number": "10",
+    // //                            "start_from_0": "0",
+    // //                            "render_type": "star rating"
+    // //                        },
+    // //                        "answers": []
+    // //                    },
+    // //                    {
+    // //                        "id": 1677,
+    // //                        "type": "QuestionConfigurableDIGI",
+    // //                        "language": {
+    // //                            "text": "Text Question",
+    // //                            "error": "Error Text Question"
+    // //                        },
+    // //                        "nested_level": 1,
+    // //                        "options": {
+    // //                            "render_type": "line",
+    // //                            "required": "1",
+    // //                            "min": "2",
+    // //                            "max": "2",
+    // //                            "is_multichoice": "1",
+    // //                            "last_is_open": "multiline"
+    // //                        },
+    // //                        "answers": [
+    // //                            {
+    // //                                "id": 869,
+    // //                                "value": "1",
+    // //                                "name": "answer 1"
+    // //                            },
+    // //                            {
+    // //                                "id": 870,
+    // //                                "value": "2",
+    // //                                "name": "answer 1"
+    // //                            },
+    // //                            {
+    // //                                "id": 871,
+    // //                                "value": "3",
+    // //                                "name": "answer 1"
+    // //                            }
+    // //                        ]
+    // //                    },
+    // //                    {
+    // //                        "id": 1678,
+    // //                        "type": "QuestionFinishDIGI",
+    // //                        "language": {
+    // //                            "text": "Question text",
+    // //                            "error": "Error Question text"
+    // //                        },
+    // //                        "nested_level": 1,
+    // //                        "options": {},
+    // //                        "answers": []
+    // //                    }
+    // //                ],
+    // //                "finish": false,
+    // //                "state": "Created"
+    // //            }
+    // //        });
+    // //    }
+    // //
+    // //    function SetLanguage(e) {
+    // //        window.VocSignal_SendEvent('SetLanguage', {
+    // //            language: 'en'
+    // //        });
+    // //    }
+    // //
+    // //    // function GetSurvey(e) {
+    // //    //     window.VocSignal_SendEvent('GetSurvey', {
+    // //    //         questionnaireHash: document.getElementById("inpText").value || 'ffffffffffffffffffffffffffffffff',
+    // //    //         // apiUrl: 'https://gcp-st-survey.sandsiv.com',
+    // //    //         // language: 'en',
+    // //    //         // customerId: 'zu66FVdAjdsAZi74',
+    // //    //         // surveyId: document.getElementById("inpText").value ||  341,
+    // //    //         // metadata: {
+    // //    //         //     'metadata_name1': 'metadata_value1',
+    // //    //         //     'metadata_name2': 'metadata_value2',
+    // //    //         //     'metadata_name3': 'metadata_value3',
+    // //    //         // }
+    // //    //     });
+    // //    // }
+    // //
+    // //    function UpdateStyle(e) {
+    // //        window.VocSignal_SendEvent('UpdateStyle', {
+    // //            "DIGI_RUNNER_FONT_SIZE": "30",
+    // //            "DIGI_THEME_CSS_CUSTOM": '.modal__SandSIV_Template .SandSIV_Feedback_Modal_Header-text { background: red }',
+    // //            "DIGI_POPUP_WINDOW_HEIGHT": 470,
+    // //            "DIGI_POPUP_WINDOW_WIDTH": 650,
+    // //            "DIGI_POPUP_BG_COLOR": "#78ff58",
+    // //            "DIGI_POPUP_FONT_FAMILY": "Arial, sans-serif",
+    // //            "DIGI_POPUP_QUESTION_BG_COLOR": "#f64e2a",
+    // //            "DIGI_POPUP_QUESTION_FONT_COLOR": "#80185a",
+    // //            "DIGI_POPUP_INDENT": 200,
+    // //            "DIGI_POPUP_HEADER_BG_COLOR": "#b54dac",
+    // //            "DIGI_POPUP_HEADER_FONT_COLOR": "#97fcff",
+    // //            "DIGI_POPUP_BUTTON_BG_COLOR": "#6fa141",
+    // //            "DIGI_POPUP_BUTTON_FONT_COLOR": "#ffc199",
+    // //            "DIGI_TRIGGERED_BUTTON_TEXT": "test",
+    // //            "DIGI_BUTTON_SUBMIT_TEXT": "test",
+    // //            "DIGI_THANKS_MESSAGE": "test",
+    // //            "DIGI_BUTTON_FINISH_TEXT": "test",
+    // //            "DIGI_POPUP_TITLE": "test",
+    // //            "DIGI_THEME_CSS_CUSTOM_LANGUAGE": "test"
+    // //        });
+    // //    }
+    // //
+    // //    // SetMockedData();
+    // //    // GetSurvey();
+    // //
+    // //    // ,
+    // //    // metadata: {
+    // //    // 'metadata_name1': 'metadata_value1',
+    // //    // 'metadata_name2': 'metadata_value2',
+    // //    // 'metadata_name3': 'metadata_value3',
+    // //    // }
+    // //    //
+    // //
+    // //
+    // //    // function PopupSurvey() {
+    // //    //     window.VocSignal_SendEvent('PopupSurvey');
+    // //    // }
+    // //    // //
+    // //    // function InitPopupButton() {
+    // //    //     window.VocSignal_SendEvent('InitPopupButton');
+    // //    // }
+    // //    //
+    // //    // function InitBySettings() {
+    // //    //     window.VocSignal_SendEvent('InitBySettings');
+    // //    // }
+    // //    //
+    // //    // window.VocSignal_ListenEvent('ButtonShownCallback', () => {
+    // //    //     console.warn('ButtonShownCallback');
+    // //    // });
+    // //    //
+    // //    // window.VocSignal_ListenEvent('PopupShownCallback', () => {
+    // //    //     console.warn('PopupShownCallback');
+    // //    //     window.VocSignal_SendEvent('GetCustomStyle');
+    // //    //
+    // //    //
+    // //    //     var textarea = document.querySelectorAll('.question-613 textarea');
+    // //    //     textarea[0].addEventListener('keydown', function (event) {
+    // //    //         let value = textarea[0].value
+    // //    //         value.length > 10 && event.preventDefault()
+    // //    //     });
+    // //    //
+    // //    // });
+    // //    //
+    // //    // window.VocSignal_ListenEvent('PopupClosedCallback', () => {
+    // //    //     console.warn('PopupClosedCallback');
+    // //    // });
+    // //    //
+    // //    // window.VocSignal_ListenEvent('BlockerCallback', (text) => {
+    // //    //     console.warn('BlockerCallback: ', text);
+    // //    // });
+    // //
+    // //
+    // //
+    // //
+    // //    // test window.t1.l1('/digi_runner.js?surveyId=206&language=en&apiUrl=https://gcp-st-survey.sandsiv.com')
+    // //    // window.t1 = {
+    // //    //     l1: function (location) {
+    // //    //         var fileRef = document.createElement('script');
+    // //    //         fileRef.setAttribute('type', 'text/javascript');
+    // //    //
+    // //    //         fileRef.setAttribute('src', location);
+    // //    //         document.getElementsByTagName('head')[0].appendChild(fileRef);
+    // //    //     }
+    // //    // }
+    // //
+    //
+
+</script>
 </html>
